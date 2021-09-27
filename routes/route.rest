@@ -1,0 +1,29 @@
+GET http://localhost:3000/subscribers
+
+###
+
+GET http://localhost:3000/subscribers/60e25f09ab93173bd817b7b8
+
+###
+ 
+DELETE http://localhost:3000/subscribers/60e25893ab93173bd817b7b1
+
+###
+ 
+PATCH http://localhost:3000/subscribers/60e25f09ab93173bd817b7b8
+Content-Type: application/json  
+ 
+{ 
+  "name": "Ouafa2" 
+} 
+
+###
+
+POST http://localhost:3000/subscribers
+Content-Type: application/json
+
+{ 
+  "name": "Alla",
+  "subscribedChannel": "hhhhh"
+} 
+

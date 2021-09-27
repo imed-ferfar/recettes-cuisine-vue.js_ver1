@@ -1,0 +1,24 @@
+<h2 class="page-header">Chercher un cuisinier</h2>
+<form action="/personnes" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Nom</label>
+      <input type="text" name="nom" value="<%= searchOptions.nom %>">
+    </div>
+  </div>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Rechercher</button>
+  </div>
+</form>
+<br>
+<% personnes.forEach(personne => { %>
+  <div class="personne-row">
+    <div class="personne-name"><%= personne.prenom %> - <%= personne.nom %></div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/personnes/<%= personne.id %>">Afficher</a>
+      <a class="btn btn-primary" href="/personnes/<%= personne.id %>/edit">Modifier</a>
+      <%- include('../partials/deleteForm',
+                  { url: `/personnes/${personne.id}` }) %>
+    </div>
+  </div>
+<% }) %>

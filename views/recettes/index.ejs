@@ -1,0 +1,24 @@
+<h2 class="page-header">Chercher une recette</h2>
+<form action="/recettes" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Titre</label>
+      <input type="text" name="titre" value="<%= searchOptions.titre %>">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-item">
+      <label>Aprés la date</label>
+      <input type="date" name="publishedAfter" value="<%= searchOptions.publishedAfter %>">
+    </div>
+    <div class="form-item">
+      <label>Avant la date</label>
+      <input type="date" name="publishedBefore" value="<%= searchOptions.publishedBefore %>">
+    </div>
+  </div>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Rechercher</button>
+  </div>
+</form>
+<br>
+<%- include('../partials/recetteGrid', { recettes: recettes, large: true }) %>

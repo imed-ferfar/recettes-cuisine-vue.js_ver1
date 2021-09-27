@@ -1,0 +1,21 @@
+<h2 class="page-header"><%= recette.titre %></h2>
+<div class="recette-details">
+  <div>
+    <img class="recette-cover" src="<%= recette.coverImagePath %>">
+    <div class="recette-details-btn-grid">
+      <a class="btn btn-primary" href="/recettes/<%= recette.id %>/edit">Edit</a>
+      <%- include('../partials/deleteForm', { url: `/recettes/${recette.id}` }) %>
+      <a class="btn btn-primary recette-details-personne-button" href="/personnes/<%= recette.personne.id %>">Voir le cuisinier</a>
+    </div>
+  </div>
+  <div class="recette-details-grid">
+    <div class="recette-details-label">Cuisinier:</div>
+    <div><%= recette.personne.nom %> <%= recette.personne.prenom %></div>
+    <div class="recette-details-label">Date de publication:</div>
+    <div><%= recette.publishDate.toDateString() %></div>
+    <div class="recette-details-label">Ingrédients:</div>
+    <div><%= recette.ingredients %></div>
+    <div class="recette-details-label">Préparation:</div>
+    <div><%= recette.preparation %></div>
+  </div>
+</div>

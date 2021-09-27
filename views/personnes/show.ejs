@@ -1,0 +1,10 @@
+<h2 class="page-header"><%= personne.nom %></h2>
+<div class="btn-row">
+  <a class="btn btn-primary" href="/personnes/<%= personne.id %>/edit">Edit</a>
+  <%- include('../partials/deleteForm',
+              { url: `/personnes/${personne.id}` }) %>
+</div>
+<% if (recettesCuisinier.length > 0) { %>
+  <h2 class="page-header">Recettes de <%= personne.prenom %> :</h2>
+  <%- include('../partials/recetteGrid', { recettes: recettesCuisinier }) %>
+<% } %>

@@ -1,0 +1,8 @@
+<h2 class="page-header">Nouvelle recette</h2>
+<form action="/recettes" method="POST">
+  <%- include('_form_fields') %>
+  <div class="form-row form-row-end btn-row">
+    <a class="btn btn-danger" href="/recettes">Annuler</a>
+    <button class="btn btn-primary" type="submit">Ajouter</button>
+  </div>
+</form>
